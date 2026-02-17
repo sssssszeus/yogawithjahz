@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Yoga with Jahz | Corporate Yoga for Busy Professionals in Manila">
+    <meta name="description" content="Corporate yoga instructor with 14+ years experience helping busy professionals reduce stress, improve focus, and sleep better. Trusted by Shell, ADB, and more. No experience needed.">
+    <meta name="keywords" content="corporate yoga Manila, workplace wellness Philippines, yoga for busy professionals, office yoga, stress relief, corporate wellness programs, yoga instructor Manila, beginner yoga">
+    <meta name="author" content="Jahz">
+    <link rel="canonical" href="https://yogawithjahz.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://yogawithjahz.com/">
+    <meta property="og:site_name" content="Yoga with Jahz">
+    <meta property="og:title" content="Yoga with Jahz | Corporate Yoga for Busy Professionals">
+    <meta property="og:description" content="14+ years helping Manila professionals reduce stress and improve focus through practical yoga. Trusted by Shell, ADB, Shangri-La. No flexibility required.">
+    <meta property="og:image" content="https://yogawithjahz.com/assets/pfp.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Jahz, corporate yoga instructor">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yogawithjahz.com/">
+    <meta name="twitter:title" content="Yoga with Jahz | Corporate Yoga for Busy Professionals">
+    <meta name="twitter:description" content="14+ years helping Manila professionals reduce stress and improve focus through practical yoga. No flexibility required.">
+    <meta name="twitter:image" content="https://yogawithjahz.com/assets/pfp.jpg">
+    <meta name="twitter:image:alt" content="Jahz, corporate yoga instructor">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+    <title>Yoga with Jahz | Corporate Yoga in the Philippines</title>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://yogawithjahz.com/#business",
+          "name": "Yoga with Jahz",
+          "description": "Corporate yoga instruction for busy professionals in Manila. 14+ years experience helping teams reduce stress, improve focus, and feel better through accessible yoga practices.",
+          "url": "https://yogawithjahz.com/",
+          "telephone": "+63-XXX-XXX-XXXX",
+          "priceRange": "$$",
+          "address": { "@type": "PostalAddress", "addressLocality": "Manila", "addressRegion": "Metro Manila", "addressCountry": "PH" },
+          "geo": { "@type": "GeoCoordinates", "latitude": 14.5995, "longitude": 120.9842 },
+          "image": "https://yogawithjahz.com/assets/pfp.jpg",
+          "founder": { "@id": "https://yogawithjahz.com/#person" },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "7", "bestRating": "5", "worstRating": "1" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Yoga Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate Yoga Sessions", "description": "On-site or virtual yoga sessions for corporate teams. Sessions range from 30-60 minutes." } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Individual Yoga Coaching", "description": "One-on-one yoga instruction tailored to your needs and schedule." } }
+            ]
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://yogawithjahz.com/#person",
+          "name": "Jahz",
+          "jobTitle": "Yoga Instructor",
+          "description": "Corporate yoga instructor with over 14 years of experience.",
+          "image": "https://yogawithjahz.com/assets/pfp.jpg",
+          "url": "https://yogawithjahz.com/",
+          "sameAs": ["https://facebook.com/yogawithjahz", "https://instagram.com/yogawithjahz"],
+          "knowsAbout": ["Yoga", "Corporate Wellness", "Stress Management", "Workplace Health"]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://yogawithjahz.com/#faq",
+          "mainEntity": [
+            { "@type": "Question", "name": "Do I need to be flexible to start yoga?", "acceptedAnswer": { "@type": "Answer", "text": "No. Most clients start feeling stiff. Yoga builds flexibility over time." } },
+            { "@type": "Question", "name": "How long are the sessions?", "acceptedAnswer": { "@type": "Answer", "text": "30-60 minutes, designed to fit into busy professional schedules." } },
+            { "@type": "Question", "name": "What companies have you worked with?", "acceptedAnswer": { "@type": "Answer", "text": "Shell, Asian Development Bank, The Farm, Citco, Infor, Shangri-La, and more." } }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A3A',
+                        secondary: '#D5E4E1',
+                        accent: '#C9A87C',
+                        surface: '#F9F9F7',
+                        text: '#1A1A1A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['DM Serif Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ===================================
+           BASE — off-white canvas
+           =================================== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :focus-visible {
+            outline: 2px solid rgba(47, 93, 87, 0.5);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        body {
+            background-color: #FAFAF8;
+            color: #364F4F;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.0625rem;
+            line-height: 1.75;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===================================
+           TYPOGRAPHY — editorial calm
+           =================================== */
+        .display-text {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 5.25rem;
+            font-weight: 400;
+            line-height: 1.05;
+            color: #1E3A3A;
+            letter-spacing: -0.025em;
+        }
+
+        h2, .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.125rem;
+            font-weight: 400;
+            color: #1E3A3A;
+            margin-bottom: 1.2em;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            -webkit-font-smoothing: auto;
+        }
+
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1E3A3A;
+            line-height: 1.4;
+        }
+
+        p {
+            line-height: 1.75;
+        }
+
+        .prose-limit {
+            max-width: 38em;
+        }
+
+        .text-quiet {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 400;
+            line-height: 1.75;
+            color: rgba(54, 79, 79, 0.75);
+            max-width: 36em;
+        }
+
+        /* ===================================
+           SURFACES — paper-on-table
+           =================================== */
+        .island {
+            background: #EFF8F6;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(30,58,58,0.04), 0 16px 40px rgba(30,58,58,0.07);
+        }
+
+        /* ===================================
+           NAVIGATION — confident, quiet
+           =================================== */
+        nav {
+            background: rgba(250, 250, 248, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(30, 58, 58, 0.06);
+        }
+
+        nav a.display-text {
+            background: none !important;
+            color: #1E3A3A !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            font-size: 1.25rem !important;
+        }
+
+        nav a, nav button {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 500;
+        }
+
+        /* ===================================
+           CONTACT DROPDOWN
+           =================================== */
+        #contactDropdownBtn {
+            background: none !important;
+            color: #1E3A3A !important;
+            border: none;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            box-shadow: none;
+            outline: none;
+            text-decoration: none;
+            transition: none;
+        }
+
+        #contactDropdownBtn:hover,
+        #contactDropdownBtn:focus,
+        #contactDropdownBtn[aria-expanded="true"] {
+            color: #1E3A3A !important;
+            background: none !important;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        #contactDropdownMenu {
+            background: #fff;
+            border: 1px solid rgba(30, 58, 58, 0.08);
+            box-shadow: 0 8px 24px rgba(30, 58, 58, 0.1);
+            border-radius: 12px;
+        }
+
+        #contactDropdownMenu a {
+            text-decoration: none;
+            background: none;
+            box-shadow: none;
+            color: #1E3A3A;
+            transition: opacity 0.2s;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        #contactDropdownMenu a svg {
+            color: #1E3A3A;
+            fill: #1E3A3A;
+        }
+
+        #contactDropdownMenu a:hover {
+            opacity: 0.6;
+        }
+
+        /* ===================================
+           CTA — restrained, inevitable
+           =================================== */
+        .btn-primary {
+            background: #2F5D57;
+            color: white;
+            border: none;
+            border-radius: 9999px;
+            padding: 0.8rem 2.2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            cursor: pointer;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(47, 93, 87, 0.3), 0 0 0 3px rgba(47, 93, 87, 0.08);
+            background: #356860;
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(47, 93, 87, 0.2);
+        }
+
+        /* ===================================
+           ANIMATIONS
+           =================================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        .gallery-image {
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            border-radius: 14px;
+        }
+
+        /* Logo scroll */
+        .logo-scroll {
+            animation: logo-scroll-anim 40s linear infinite;
+        }
+
+        @keyframes logo-scroll-anim {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===================================
+           HERO IMAGE
+           =================================== */
+        img.hero-image {
+            box-shadow: 0 20px 60px rgba(30, 58, 58, 0.15) !important;
+        }
+
+        /* ===================================
+           TRUSTED LOGOS
+           =================================== */
+        .trusted-logo {
+            height: 44px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(0.8);
+            opacity: 0.7;
+            transition: filter 0.4s, opacity 0.4s;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .trusted-logo:hover {
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+        }
+
+        /* ===================================
+           LIGHTBOX
+           =================================== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 14px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .lightbox-close:hover { opacity: 1; }
+
+        /* ===================================
+           FLOATING CTA
+           =================================== */
+        .floating-cta {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 900;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .floating-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 24px;
+            background: #2F5D57;
+            color: white;
+            border-radius: 9999px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(47, 93, 87, 0.25);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .floating-cta a:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(47, 93, 87, 0.3);
+        }
+
+        /* ===================================
+           FOOTER
+           =================================== */
+        footer {
+            background: #1E3A3A;
+            color: rgba(255,255,255,0.8);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8125rem;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.7);
+            background: none;
+            padding: 0;
+            font-size: 1.25rem;
+            transition: color 0.2s;
+            box-shadow: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* ===================================
+           MOBILE
+           =================================== */
+        @media (max-width: 768px) {
+            .hero-image-mobile {
+                border-bottom-left-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+            }
+
+            .gallery-image {
+                cursor: default;
+                pointer-events: none;
+            }
+
+            .floating-cta {
+                bottom: 16px;
+                right: 16px;
+                left: 16px;
+                text-align: center;
+            }
+
+            .floating-cta a {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 20px;
+                font-size: 0.8125rem;
+            }
+
+            h1 { font-size: 2.75rem; line-height: 1.08; }
+            h2, .section-title { font-size: 1.625rem; }
+            h3 { font-size: 1.125rem; }
+            body, p { font-size: 0.9375rem; }
+            .btn-primary { font-size: 0.9375rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-14">
+                <div class="flex items-center gap-3">
+                    <a href="javascript:void(0)" id="logoLink" class="no-underline hover:opacity-70 transition-opacity cursor-pointer">
+                        <img src="assets/logo.svg" alt="Yoga with Jahz" style="height:32px;width:auto;" />
+                    </a>
+                    <a href="javascript:void(0)" id="nameLink" class="text-xl font-bold text-[#1E3A3A] display-text no-underline hover:opacity-70 transition-opacity cursor-pointer">
+                        Yoga with Jahz
+                    </a>
+                </div>
+                <span class="text-sm text-[#1E3A3A]/55 tracking-[0.08em] font-medium select-none hidden md:block">Intentional Movement</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta" id="floatingCTA">
+        <a href="#contact">
+            Get in Touch
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="pt-14">
+
+        <!-- Hero -->
+        <section class="pt-8 pb-0 md:py-24 bg-[#FAFAF8]">
+            <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between island overflow-hidden md:min-h-[540px]">
+                <div class="flex-1 px-4 py-12 md:px-12 md:py-20 flex flex-col justify-center z-10">
+                    <h1 class="display-text text-[#1E3A3A] mb-6 md:mb-8">
+                        Yoga that fits your schedule.
+                    </h1>
+                    <p class="text-[#4A6868] mb-6 md:mb-8 max-w-md prose-limit">
+                        I help busy professionals use 30–60 minutes of movement to think clearer, sleep better, and recover from long work days.
+                    </p>
+                    <p class="text-sm text-[#1E3A3A]/50 mb-8">
+                        Trusted by teams at Shell, ADB, and Shangri-La.
+                    </p>
+                    <div>
+                        <a href="#contact" class="btn-primary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="flex-1 flex items-center justify-center md:items-stretch md:justify-end relative h-full w-full md:w-1/2">
+                    <img src="assets/pfp-full.png" alt="Jahz - Corporate yoga instructor" class="hero-image-mobile relative z-20 w-full md:w-auto md:h-full md:rounded-[14px] object-cover object-center md:object-top hero-image" loading="eager" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Logos -->
+        <section class="py-16 md:py-20 bg-[#FAFAF8]">
+            <div class="max-w-5xl mx-auto px-6">
+                <p class="text-sm text-[#1E3A3A]/40 text-center mb-8 font-normal max-w-none">Trusted by teams at:</p>
+                <div class="relative overflow-hidden max-w-2xl mx-auto">
+                    <div class="flex logo-scroll gap-14 min-w-max items-center">
+                        <img src="assets/logos/shell.webp" alt="Shell" class="trusted-logo" />
+                        <img src="assets/logos/Asian_Development_Bank_logo.svg.png" alt="Asian Development Bank" class="trusted-logo" />
+                        <img src="assets/logos/the farm.jpg" alt="The Farm" class="trusted-logo" />
+                        <img src="assets/logos/logo-CITCO-size-2023.webp" alt="Citco" class="trusted-logo" />
+                        <img src="assets/logos/infor.png" alt="Infor" class="trusted-logo" />
+                        <img src="assets/logos/shangrila.png" alt="Shangri-La" class="trusted-logo" />
+                        <img src="assets/logos/icare.jpeg" alt="iCare" class="trusted-logo" />
+                        <img src="assets/logos/solaire.png" alt="Solaire Resort" class="trusted-logo" />
+                        <!-- Duplicate for loop -->
+                        <img src="assets/logos/shell.webp" alt="Shell" class="trusted-logo" />
+                        <img src="assets/logos/Asian_Development_Bank_logo.svg.png" alt="Asian Development Bank" class="trusted-logo" />
+                        <img src="assets/logos/the farm.jpg" alt="The Farm" class="trusted-logo" />
+                        <img src="assets/logos/logo-CITCO-size-2023.webp" alt="Citco" class="trusted-logo" />
+                        <img src="assets/logos/infor.png" alt="Infor" class="trusted-logo" />
+                        <img src="assets/logos/shangrila.png" alt="Shangri-La" class="trusted-logo" />
+                        <img src="assets/logos/icare.jpeg" alt="iCare" class="trusted-logo" />
+                        <img src="assets/logos/solaire.png" alt="Solaire Resort" class="trusted-logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery A -->
+        <section class="py-24 md:py-32 bg-white">
+            <div class="max-w-5xl mx-auto px-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-[#1E3A3A]/40 mb-12 md:mb-16 text-center max-w-none">
+                    What This Looks Like
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+                    <div class="fade-in">
+                        <img src="assets/gallery/gallery-1.jpg" alt="Corporate yoga session" class="w-full aspect-[4/3] object-cover gallery-image mb-5" />
+                        <div class="text-center">
+                            <p class="text-[15px] font-normal text-[#1E3A3A]/50">Clear your head. Reset your body. In minutes.</p>
+                        </div>
+                    </div>
+                    <div class="fade-in delay-100">
+                        <img src="assets/gallery/gallery-2.jpeg" alt="Office yoga session" class="w-full aspect-[4/3] object-cover gallery-image mb-5" />
+                        <div class="text-center">
+                            <p class="text-[15px] font-normal text-[#1E3A3A]/50">Less tension. More focus. Better days.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How This Works -->
+        <section class="py-28 md:py-36 bg-[#FAFAF8]">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="max-w-3xl mx-auto">
+                    <p class="text-xs uppercase tracking-[0.2em] text-[#1E3A3A]/40 mb-4 text-center max-w-none fade-in">
+                        How This Works
+                    </p>
+                    <h2 class="display-text text-[#1E3A3A] text-center fade-in">
+                        A practical approach to yoga at work
+                    </h2>
+                    <div class="island fade-in mt-10 mb-8">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="flex-1 px-8 py-10 md:px-10 md:py-12">
+                                <h3 class="text-[#1E3A3A] mb-5">What this is</h3>
+                                <ul class="space-y-3 text-quiet leading-relaxed">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold">
+                                        Short sessions that fit into real workdays.
+                                    </li>
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold">
+                                        Movement designed for people who sit all day.
+                                    </li>
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold">
+                                        Works for complete beginners.
+                                    </li>
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold">
+                                        Adapts to your team's energy and space.
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex items-center justify-center mx-8 md:mx-0">
+                                <div class="w-16 h-[2px] md:w-[2px] md:h-20 bg-[#1E3A3A]/12 rounded-full"></div>
+                            </div>
+                            <div class="flex-1 px-8 py-10 md:px-10 md:py-12">
+                                <h3 class="text-[#1E3A3A]/70 mb-5">What this isn't</h3>
+                                <ul class="space-y-3 text-quiet leading-relaxed" style="color: rgba(44, 74, 74, 0.58);">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold">
+                                        NOT philosophical practice.
+                                    </li>
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold">
+                                        NOT advanced poses or flexibility.
+                                    </li>
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold">
+                                        NOT a workout that leaves you exhausted.
+                                    </li>
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold">
+                                        NOT one-size-fits-all programming.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center text-quiet italic fade-in delay-200 mx-auto max-w-none">
+                        If you're unsure whether this would work for your team, we can talk it through.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery B -->
+        <section class="py-24 md:py-32 bg-white">
+            <div class="max-w-5xl mx-auto px-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-[#1E3A3A]/40 mb-12 md:mb-16 text-center max-w-none">
+                    In Practice
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+                    <div class="fade-in">
+                        <img src="assets/gallery/gallery-3.jpg" alt="Yoga break in the office" class="w-full aspect-[4/3] object-cover gallery-image mb-5" />
+                        <div class="text-center">
+                            <p class="text-[15px] font-normal text-[#1E3A3A]/50">Build the habit. See the difference over time.</p>
+                        </div>
+                    </div>
+                    <div class="fade-in delay-100">
+                        <img src="assets/gallery/gallery-4.jpeg" alt="Online yoga session" class="w-full aspect-[4/3] object-cover gallery-image mb-5" />
+                        <div class="text-center">
+                            <p class="text-[15px] font-normal text-[#1E3A3A]/50">Move with intention. Work with clarity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials 1 -->
+        <section class="py-28 md:py-36 bg-[#FAFAF8]">
+            <div class="max-w-4xl mx-auto px-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-[#1E3A3A]/40 mb-10 text-center max-w-none">
+                    From Teams I've Worked With
+                </p>
+                <div class="island px-8 py-10 md:px-12 md:py-12 fade-in">
+                    <div class="grid md:grid-cols-3 gap-10 md:gap-12">
+                        <blockquote>
+                            <p class="text-quiet italic mb-3">
+                                "I used to wake up with neck pain every morning. Six weeks in, it's gone."
+                            </p>
+                            <cite class="text-xs text-[#1E3A3A]/50 not-italic tracking-wide">Maria, Marketing Director</cite>
+                        </blockquote>
+                        <blockquote>
+                            <p class="text-quiet italic mb-3">
+                                "Our Wednesday sessions are the only meeting my team looks forward to."
+                            </p>
+                            <cite class="text-xs text-[#1E3A3A]/50 not-italic tracking-wide">Lisa, HR Lead</cite>
+                        </blockquote>
+                        <blockquote>
+                            <p class="text-quiet italic mb-3">
+                                "Just 30 minutes made the rest of my day so much easier. I didn't think that was possible."
+                            </p>
+                            <cite class="text-xs text-[#1E3A3A]/50 not-italic tracking-wide">Carla, Team Lead</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bio -->
+        <section class="py-28 md:py-36 bg-white" id="bio">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row gap-14 items-center">
+                    <div class="md:w-5/12">
+                        <img src="assets/pfp.png" alt="Jahz" class="w-full gallery-image" style="border-radius:14px;" />
+                    </div>
+                    <div class="md:w-7/12">
+                        <h2 class="section-title fade-in">Hi, I'm Jahz</h2>
+                        <p class="text-quiet fade-in delay-100 mb-5">
+                            I've spent over 14 years teaching yoga in boardrooms, break rooms, and everything in between. Hundreds of sessions across dozens of teams. I work with people who think they're too stiff, too busy, or too skeptical.
+                        </p>
+                        <p class="text-quiet fade-in delay-200">
+                            Most clients come to me exhausted and tight. They leave standing straighter, sleeping better, and wondering why they waited so long to start.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials 2 -->
+        <section class="py-28 md:py-36 bg-[#FAFAF8]">
+            <div class="max-w-4xl mx-auto px-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-[#1E3A3A]/40 mb-10 text-center max-w-none">
+                    What Clients Notice
+                </p>
+                <div class="island px-8 py-10 md:px-12 md:py-12 fade-in">
+                    <div class="grid md:grid-cols-3 gap-10 md:gap-12">
+                        <blockquote>
+                            <p class="text-quiet italic mb-3">
+                                "I was skeptical. Now I do 20 minutes before my first meeting every day."
+                            </p>
+                            <cite class="text-xs text-[#1E3A3A]/50 not-italic tracking-wide">James, Finance Manager</cite>
+                        </blockquote>
+                        <blockquote>
+                            <p class="text-quiet italic mb-3">
+                                "I sleep better. I sit better. I didn't expect that from yoga."
+                            </p>
+                            <cite class="text-xs text-[#1E3A3A]/50 not-italic tracking-wide">Tom, Software Engineer</cite>
+                        </blockquote>
+                        <blockquote>
+                            <p class="text-quiet italic mb-3">
+                                "No pressure, no awkwardness. Jahz just made it really easy to start."
+                            </p>
+                            <cite class="text-xs text-[#1E3A3A]/50 not-italic tracking-wide">Ana, Operations Manager</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-32 md:py-40 bg-white">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h2 class="section-title fade-in">
+                    Curious if this could work for you and your team?
+                </h2>
+                <p class="text-[#1E3A3A]/55 fade-in delay-100 mb-12 mx-auto" style="max-width:28em;">
+                    Let's chat. No sales pitch - just an honest conversation about what you need and whether I can help.
+                </p>
+
+                <div class="island p-10 md:p-14 fade-in delay-200 max-w-lg mx-auto" style="box-shadow: 0 16px 40px rgba(0,0,0,0.07); border: 1px solid rgba(47,93,87,0.12);">
+                    <div class="space-y-6">
+                        <!-- Messenger -->
+                        <a href="https://m.me/yogawithjahz" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-3 w-full px-8 py-4 bg-[#0084FF] text-white rounded-full transition-all duration-200 text-base font-medium hover:shadow-lg hover:translate-y-[-1px]">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.26L19.752 8l-6.561 6.963z"/></svg>
+                            Chat on Messenger
+                        </a>
+
+                        <!-- Divider -->
+                        <div class="relative py-2">
+                            <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-[#1E3A3A]/8"></div></div>
+                            <div class="relative flex justify-center text-xs"><span class="px-4 bg-[#EFF8F6] text-[#1E3A3A]/30">or</span></div>
+                        </div>
+
+                        <!-- Email -->
+                        <a href="mailto:yogijahz@gmail.com?subject=Yoga Inquiry"
+                            class="btn-primary inline-flex items-center justify-center gap-3 w-full px-8 py-4">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            Send an Email
+                        </a>
+
+                        <!-- Expect -->
+                        <div class="pt-6 border-t border-[#1E3A3A]/8 mt-4">
+                            <p class="text-[#1E3A3A]/40 text-xs mb-4">What to expect:</p>
+                            <ul class="text-[#1E3A3A]/50 text-xs space-y-2 text-left max-w-xs mx-auto">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-3.5 h-3.5 text-[#2F5D57] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    I typically respond immediately.
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-3.5 h-3.5 text-[#2F5D57] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                    Free 15-minute call to see if it's a fit.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+
+    <script>
+        // Scroll to top on refresh
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+        window.addEventListener('load', function() { setTimeout(function() { window.scrollTo(0, 0); }, 0); });
+        window.addEventListener('pageshow', function(e) { if (e.persisted) window.scrollTo(0, 0); });
+
+        // Logo/name click — smooth scroll to top
+        function smoothScrollToTop(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            try { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+            catch (err) { window.scrollTo(0, 0); }
+            return false;
+        }
+        document.getElementById('logoLink').addEventListener('click', smoothScrollToTop);
+        document.getElementById('nameLink').addEventListener('click', smoothScrollToTop);
+        document.getElementById('logoLink').addEventListener('touchend', smoothScrollToTop);
+        document.getElementById('nameLink').addEventListener('touchend', smoothScrollToTop);
+
+        // Lightbox
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = imgSrc;
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+        // Fade-in observer
+        document.addEventListener('DOMContentLoaded', function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+            document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+        });
+
+        // Floating CTA visibility
+        (function() {
+            var cta = document.getElementById('floatingCTA');
+            if (!cta) return;
+            function check() {
+                var sections = document.querySelectorAll('section');
+                var mid = window.scrollY + window.innerHeight / 2;
+                var inCTA = false;
+                sections.forEach(function(s) {
+                    var t = s.offsetTop, b = t + s.offsetHeight;
+                    if (mid >= t && mid <= b && (s.id === 'contact' || s.querySelector('a[href="#contact"]') || s.querySelector('a[href*="m.me"]'))) inCTA = true;
+                });
+                var heroEnd = sections[0] ? sections[0].offsetTop + (sections[0].offsetHeight * 0.6) : 0;
+                cta.classList.toggle('visible', window.scrollY > heroEnd && !inCTA);
+            }
+            window.addEventListener('scroll', check, { passive: true });
+            check();
+        })();
+    </script>
+
+    <!-- Footer -->
+    <footer class="w-full py-6">
+        <div class="max-w-2xl mx-auto flex flex-col items-center gap-3">
+            <div class="footer-social flex flex-row items-center justify-center gap-6">
+                <a href="https://facebook.com/yogawithjahz" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+                </a>
+                <a href="https://instagram.com/yogawithjahz" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 2.25a5.25 5.25 0 1 1-5.25 5.25A5.25 5.25 0 0 1 12 5.75zm0 1.5a3.75 3.75 0 1 0 3.75 3.75A3.75 3.75 0 0 0 12 7.25zm5.25 1.25a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.844-1.563 3.043 0 3.604 2.004 3.604 4.609v5.587z"/></svg>
+                </a>
+            </div>
+            <div class="text-center opacity-50">&copy; 2026 Yoga with Jahz</div>
+        </div>
+    </footer>
+
+    <!-- GA4 Tracking -->
+    <script>
+        function trackEvent(n, p) { if (typeof gtag !== 'undefined') gtag('event', n, p || {}); }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href="#contact"], .btn-primary').forEach(function(b) {
+                b.addEventListener('click', function() { trackEvent('cta_click', { button_text: this.textContent.trim() }); });
+            });
+            var m = document.querySelector('a[href*="m.me"]');
+            if (m) m.addEventListener('click', function() { trackEvent('contact_method', { method: 'messenger' }); });
+            var e = document.querySelector('a[href^="mailto:"]');
+            if (e) e.addEventListener('click', function() { trackEvent('contact_method', { method: 'email' }); });
+            var d = {};
+            window.addEventListener('scroll', function() {
+                var p = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+                [25,50,75,100].forEach(function(v) { if (p >= v && !d[v]) { d[v] = true; trackEvent('scroll_depth', { depth: v+'%' }); } });
+            });
+        });
+    </script>
+</body>
+</html>
