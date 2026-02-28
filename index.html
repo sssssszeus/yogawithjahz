@@ -386,6 +386,15 @@
         }
 
         /* ===================================
+           WORD SWAP
+           =================================== */
+        #swap-word {
+            display: inline-block;
+            color: #2F5D57;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        /* ===================================
            FLOATING CTA
            =================================== */
         .floating-cta {
@@ -526,7 +535,7 @@
             <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between island overflow-hidden md:min-h-[540px]">
                 <div class="flex-1 px-4 py-12 md:px-12 md:py-20 flex flex-col justify-center z-10">
                     <h1 class="display-text text-[#1E3A3A] mb-6 md:mb-8">
-                        Yoga that fits your schedule.
+                        Yoga that fits your <span id="swap-word">schedule</span>.
                     </h1>
                     <p class="text-[#4A6868] mb-6 md:mb-8 max-w-md prose-limit">
                         I help busy professionals use 30–60 minutes of movement to think clearer, sleep better, and recover from long work days.
@@ -857,6 +866,32 @@
             }
             window.addEventListener('scroll', check, { passive: true });
             check();
+        })();
+
+        // Hero headline word swap
+        (function() {
+            var words = ['schedule', 'team', 'life'];
+            var idx = 0;
+            var el = document.getElementById('swap-word');
+            if (!el) return;
+
+            function swapTo(next) {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(-8px)';
+                setTimeout(function() {
+                    el.textContent = words[next];
+                    el.style.transition = 'none';
+                    el.style.transform = 'translateY(8px)';
+                    el.offsetHeight; // force reflow
+                    el.style.transition = '';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                    idx = next;
+                    if (idx < words.length - 1) setTimeout(function() { swapTo(idx + 1); }, 2200);
+                }, 350);
+            }
+
+            setTimeout(function() { swapTo(1); }, 2000);
         })();
     </script>
 
