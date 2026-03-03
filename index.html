@@ -22,7 +22,7 @@
     <meta property="og:site_name" content="Yoga with Jahz">
     <meta property="og:title" content="Yoga with Jahz | Corporate Yoga for Busy Professionals">
     <meta property="og:description" content="14+ years helping Manila professionals reduce stress and improve focus through practical yoga. Trusted by Shell, ADB, Shangri-La. No flexibility required.">
-    <meta property="og:image" content="https://yogawithjahz.com/assets/pfp.webp">
+    <meta property="og:image" content="https://yogawithjahz.com/assets/pfp.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Jahz, corporate yoga instructor in Manila, Philippines">
@@ -32,11 +32,11 @@
     <meta name="twitter:url" content="https://yogawithjahz.com/">
     <meta name="twitter:title" content="Yoga with Jahz | Corporate Yoga for Busy Professionals">
     <meta name="twitter:description" content="14+ years helping Manila professionals reduce stress and improve focus through practical yoga. No flexibility required.">
-    <meta name="twitter:image" content="https://yogawithjahz.com/assets/pfp.webp">
+    <meta name="twitter:image" content="https://yogawithjahz.com/assets/pfp.png">
     <meta name="twitter:image:alt" content="Jahz, corporate yoga instructor">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
     <title>Yoga with Jahz | Corporate Yoga Instructor in Manila, Philippines</title>
 
@@ -75,7 +75,7 @@
             { "@type": "Country", "name": "Philippines" }
           ],
           "geo": { "@type": "GeoCoordinates", "latitude": 14.5995, "longitude": 120.9842 },
-          "image": "https://yogawithjahz.com/assets/pfp.webp",
+          "image": "https://yogawithjahz.com/assets/pfp.png",
           "founder": { "@id": "https://yogawithjahz.com/#person" },
           "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "7", "bestRating": "5", "worstRating": "1" },
           "hasOfferCatalog": {
@@ -93,7 +93,7 @@
           "name": "Jahz",
           "jobTitle": "Yoga Instructor",
           "description": "Corporate yoga instructor with over 14 years of experience.",
-          "image": "https://yogawithjahz.com/assets/pfp.webp",
+          "image": "https://yogawithjahz.com/assets/pfp.png",
           "url": "https://yogawithjahz.com/",
           "sameAs": ["https://facebook.com/yogawithjahz", "https://instagram.com/yogawithjahz"],
           "knowsAbout": ["Yoga", "Corporate Wellness", "Stress Management", "Workplace Health"]
@@ -373,8 +373,9 @@
            WORD SWAP ANIMATION
            =================================== */
         .word-swap-container {
-            display: inline;
+            display: inline-block;
             position: relative;
+            vertical-align: baseline;
             white-space: nowrap;
         }
 
@@ -433,86 +434,39 @@
         }
 
         /* ===================================
-           PHOTO SLIDER
+           LIGHTBOX
            =================================== */
-        .slider-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 14px;
-            aspect-ratio: 4/3;
-            background: #EFF8F6;
-            cursor: grab;
-        }
-        .slider-container:active { cursor: grabbing; }
-        @media (max-width: 768px) { .slider-container { aspect-ratio: 1/1; } }
-        .slider-track {
-            display: flex;
-            height: 100%;
-            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: transform;
-        }
-        .slider-slide {
-            min-width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            user-select: none;
-            -webkit-user-drag: none;
-            display: block;
-        }
-        .slider-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.85);
-            border: none;
-            cursor: pointer;
+        .lightbox {
             display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
             align-items: center;
-            justify-content: center;
-            color: #1E3A3A;
-            transition: background 0.15s, transform 0.15s;
-            backdrop-filter: blur(4px);
         }
-        @media (min-width: 768px) { .slider-arrow { display: flex; } }
-        .slider-arrow:hover { background: #fff; transform: translateY(-50%) scale(1.08); }
-        .slider-arrow:active { transform: translateY(-50%) scale(0.96); }
-        .slider-arrow--prev { left: 16px; }
-        .slider-arrow--next { right: 16px; }
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
+
+        .lightbox img {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 14px;
         }
-        .slider-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 9999px;
-            background: #1E3A3A;
-            opacity: 0.2;
-            border: none;
+
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            color: white;
+            font-size: 28px;
             cursor: pointer;
-            transition: opacity 0.2s, width 0.25s cubic-bezier(0.4,0,0.2,1);
-            padding: 0;
+            opacity: 0.7;
+            transition: opacity 0.2s;
         }
-        .slider-dot.active { width: 28px; opacity: 0.65; }
-        .slider-dot:hover { opacity: 0.35; }
-        .slider-caption {
-            text-align: center;
-            min-height: 24px;
-            margin-top: 16px;
-        }
-        .slider-caption p {
-            font-size: 15px;
-            font-weight: 400;
-            color: rgba(30,58,58,0.5);
-            transition: opacity 0.25s ease;
-        }
+
+        .lightbox-close:hover { opacity: 1; }
 
         /* ===================================
            FLOATING CTA
@@ -628,7 +582,7 @@
             <div class="flex justify-between items-center h-14">
                 <div class="flex items-center gap-3">
                     <a href="javascript:void(0)" id="logoLink" class="no-underline hover:opacity-70 transition-opacity cursor-pointer">
-                        <img src="assets/logo.webp" alt="Yoga with Jahz" style="height:32px;width:auto;" />
+                        <img src="assets/logo.svg" alt="Yoga with Jahz" style="height:32px;width:auto;" />
                     </a>
                     <a href="javascript:void(0)" id="nameLink" class="text-xl font-bold text-[#1E3A3A] display-text no-underline hover:opacity-70 transition-opacity cursor-pointer">
                         Yoga with Jahz
@@ -668,7 +622,7 @@
                     </div>
                 </div>
                 <div class="flex-1 flex items-center justify-center md:items-stretch md:justify-end relative h-full w-full md:w-1/2">
-                    <img src="assets/pfp-full.webp" alt="Jahz - Corporate yoga instructor" class="hero-image-mobile relative z-20 w-full md:w-auto md:h-full md:rounded-[14px] object-cover object-center md:object-top hero-image" loading="eager" fetchpriority="high" />
+                    <img src="assets/pfp-full.png" alt="Jahz - Corporate yoga instructor" class="hero-image-mobile relative z-20 w-full md:w-auto md:h-full md:rounded-[14px] object-cover object-center md:object-top hero-image" loading="eager" />
                 </div>
             </div>
         </section>
@@ -679,23 +633,46 @@
                 <p class="text-sm text-[#1E3A3A]/40 text-center mb-8 font-normal max-w-none">Trusted by teams at:</p>
                 <div class="relative overflow-hidden max-w-2xl mx-auto">
                     <div class="flex logo-scroll gap-14 min-w-max items-center">
-                        <img src="assets/logos/shell.webp" alt="Shell" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/Asian_Development_Bank_logo.svg.webp" alt="Asian Development Bank" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/the farm.webp" alt="The Farm" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/logo-CITCO-size-2023.webp" alt="Citco" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/infor.webp" alt="Infor" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/shangrila.webp" alt="Shangri-La" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/icare.webp" alt="iCare" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/solaire.webp" alt="Solaire Resort" class="trusted-logo" loading="lazy" />
+                        <img src="assets/logos/shell.webp" alt="Shell" class="trusted-logo" />
+                        <img src="assets/logos/Asian_Development_Bank_logo.svg.png" alt="Asian Development Bank" class="trusted-logo" />
+                        <img src="assets/logos/the farm.jpg" alt="The Farm" class="trusted-logo" />
+                        <img src="assets/logos/logo-CITCO-size-2023.webp" alt="Citco" class="trusted-logo" />
+                        <img src="assets/logos/infor.png" alt="Infor" class="trusted-logo" />
+                        <img src="assets/logos/shangrila.png" alt="Shangri-La" class="trusted-logo" />
+                        <img src="assets/logos/icare.jpeg" alt="iCare" class="trusted-logo" />
+                        <img src="assets/logos/solaire.png" alt="Solaire Resort" class="trusted-logo" />
                         <!-- Duplicate for loop -->
-                        <img src="assets/logos/shell.webp" alt="Shell" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/Asian_Development_Bank_logo.svg.webp" alt="Asian Development Bank" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/the farm.webp" alt="The Farm" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/logo-CITCO-size-2023.webp" alt="Citco" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/infor.webp" alt="Infor" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/shangrila.webp" alt="Shangri-La" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/icare.webp" alt="iCare" class="trusted-logo" loading="lazy" />
-                        <img src="assets/logos/solaire.webp" alt="Solaire Resort" class="trusted-logo" loading="lazy" />
+                        <img src="assets/logos/shell.webp" alt="Shell" class="trusted-logo" />
+                        <img src="assets/logos/Asian_Development_Bank_logo.svg.png" alt="Asian Development Bank" class="trusted-logo" />
+                        <img src="assets/logos/the farm.jpg" alt="The Farm" class="trusted-logo" />
+                        <img src="assets/logos/logo-CITCO-size-2023.webp" alt="Citco" class="trusted-logo" />
+                        <img src="assets/logos/infor.png" alt="Infor" class="trusted-logo" />
+                        <img src="assets/logos/shangrila.png" alt="Shangri-La" class="trusted-logo" />
+                        <img src="assets/logos/icare.jpeg" alt="iCare" class="trusted-logo" />
+                        <img src="assets/logos/solaire.png" alt="Solaire Resort" class="trusted-logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery A -->
+        <section class="py-24 md:py-32 bg-white">
+            <div class="max-w-5xl mx-auto px-6">
+                <p class="text-xs uppercase tracking-[0.2em] text-[#1E3A3A]/40 mb-12 md:mb-16 text-center max-w-none">
+                    What This Looks Like
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+                    <div class="fade-in">
+                        <img src="assets/gallery/gallery-1.jpg" alt="Corporate yoga session" class="w-full aspect-[4/3] object-cover gallery-image mb-5" />
+                        <div class="text-center">
+                            <p class="text-[15px] font-normal text-[#1E3A3A]/50">Clear your head. Reset your body. In minutes.</p>
+                        </div>
+                    </div>
+                    <div class="fade-in delay-100">
+                        <img src="assets/gallery/gallery-2.jpeg" alt="Office yoga session" class="w-full aspect-[4/3] object-cover gallery-image mb-5" />
+                        <div class="text-center">
+                            <p class="text-[15px] font-normal text-[#1E3A3A]/50">Less tension. More focus. Better days.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -759,36 +736,25 @@
             </div>
         </section>
 
-        <!-- Gallery -->
+        <!-- Gallery B -->
         <section class="py-24 md:py-32 bg-white">
             <div class="max-w-5xl mx-auto px-6">
                 <p class="text-xs uppercase tracking-[0.2em] text-[#1E3A3A]/40 mb-12 md:mb-16 text-center max-w-none">
                     In Practice
                 </p>
-                <div class="slider-container" id="photoSlider">
-                    <div class="slider-track" id="sliderTrack">
-                        <img src="assets/gallery/gallery-1.webp" alt="Corporate yoga session" class="slider-slide" loading="lazy" />
-                        <img src="assets/gallery/gallery-2.webp" alt="Office yoga session" class="slider-slide" loading="lazy" />
-                        <img src="assets/gallery/gallery-3.webp" alt="Yoga break in the office" class="slider-slide" loading="lazy" />
-                        <img src="assets/gallery/gallery-4.webp" alt="Online yoga session" class="slider-slide" loading="lazy" />
-                        <img src="assets/gallery/gallery-5.webp" alt="Yoga session" class="slider-slide" loading="lazy" />
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+                    <div class="fade-in">
+                        <img src="assets/gallery/gallery-3.jpg" alt="Yoga break in the office" class="w-full aspect-[4/3] object-cover gallery-image mb-5" />
+                        <div class="text-center">
+                            <p class="text-[15px] font-normal text-[#1E3A3A]/50">Build the habit. See the difference over time.</p>
+                        </div>
                     </div>
-                    <button class="slider-arrow slider-arrow--prev" id="sliderPrev" aria-label="Previous photo">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    </button>
-                    <button class="slider-arrow slider-arrow--next" id="sliderNext" aria-label="Next photo">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </button>
-                </div>
-                <div class="slider-dots" id="sliderDots">
-                    <button class="slider-dot active" aria-label="Photo 1"></button>
-                    <button class="slider-dot" aria-label="Photo 2"></button>
-                    <button class="slider-dot" aria-label="Photo 3"></button>
-                    <button class="slider-dot" aria-label="Photo 4"></button>
-                    <button class="slider-dot" aria-label="Photo 5"></button>
-                </div>
-                <div class="slider-caption">
-                    <p id="sliderCaptionText">Clear your head. Reset your body. In minutes.</p>
+                    <div class="fade-in delay-100">
+                        <img src="assets/gallery/gallery-4.jpeg" alt="Online yoga session" class="w-full aspect-[4/3] object-cover gallery-image mb-5" />
+                        <div class="text-center">
+                            <p class="text-[15px] font-normal text-[#1E3A3A]/50">Move with intention. Work with clarity.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -829,7 +795,7 @@
             <div class="max-w-4xl mx-auto px-6">
                 <div class="flex flex-col md:flex-row gap-14 items-center">
                     <div class="md:w-5/12">
-                        <img src="assets/pfp.webp" alt="Jahz" class="w-full gallery-image" style="border-radius:14px;" loading="lazy" />
+                        <img src="assets/pfp.png" alt="Jahz" class="w-full gallery-image" style="border-radius:14px;" />
                     </div>
                     <div class="md:w-7/12">
                         <h2 class="section-title fade-in">Hi, I'm Jahz</h2>
@@ -927,6 +893,12 @@
         </section>
     </div>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+
     <script>
         // Scroll to top on refresh
         if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -946,6 +918,16 @@
         document.getElementById('nameLink').addEventListener('click', smoothScrollToTop);
         document.getElementById('logoLink').addEventListener('touchend', smoothScrollToTop);
         document.getElementById('nameLink').addEventListener('touchend', smoothScrollToTop);
+
+        // Lightbox
+        function openLightbox(imgSrc) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = imgSrc;
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 
         // Fade-in observer
         document.addEventListener('DOMContentLoaded', function() {
@@ -976,7 +958,7 @@
             check();
         })();
 
-        // Word swap: schedule → team → life — runs once on load
+        // Word swap: schedule → team → life → schedule → ... loops continuously
         (function() {
             var words = document.querySelectorAll('.word-swap-word');
             if (!words.length) return;
@@ -984,8 +966,7 @@
             var current = 0;
 
             function swap() {
-                var next = current + 1;
-                if (next >= words.length) return; // stop after "life"
+                var next = (current + 1) % words.length; // wraps back to 0 after "life"
                 var outgoing = words[current];
                 var incoming = words[next];
 
@@ -995,15 +976,15 @@
 
                 setTimeout(function() {
                     outgoing.classList.remove('word-swap-exit');
-                }, 370); // 350ms transition + 20ms buffer
+                }, 370);
 
                 current = next;
             }
 
-            // t=2000ms → "team", t=4200ms → "life" (stays permanently)
+            // First swap at 2s, then every 2.2s forever
             setTimeout(function() {
                 swap();
-                setTimeout(swap, 2200);
+                setInterval(swap, 2200);
             }, 2000);
         })();
     </script>
@@ -1025,55 +1006,6 @@
             <div class="text-center opacity-50">&copy; 2026 Yoga with Jahz</div>
         </div>
     </footer>
-
-    <!-- Photo Slider -->
-    <script>
-        (function() {
-            var track = document.getElementById('sliderTrack');
-            if (!track) return;
-            var dots = document.querySelectorAll('#sliderDots .slider-dot');
-            var captionEl = document.getElementById('sliderCaptionText');
-            var captions = [
-                'Clear your head. Reset your body. In minutes.',
-                'Less tension. More focus. Better days.',
-                'Build the habit. See the difference over time.',
-                'Move with intention. Work with clarity.',
-                ''
-            ];
-            var current = 0, total = 5, touchStartX = 0, touchEndX = 0;
-
-            function goTo(n) {
-                current = (n % total + total) % total;
-                track.style.transform = 'translateX(-' + (current * 100) + '%)';
-                dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
-                if (captionEl) {
-                    captionEl.style.opacity = '0';
-                    setTimeout(function() {
-                        captionEl.textContent = captions[current];
-                        captionEl.style.opacity = '1';
-                    }, 180);
-                }
-            }
-
-            document.getElementById('sliderPrev').addEventListener('click', function() { goTo(current - 1); });
-            document.getElementById('sliderNext').addEventListener('click', function() { goTo(current + 1); });
-            dots.forEach(function(d, i) { d.addEventListener('click', function() { goTo(i); }); });
-
-            var slider = document.getElementById('photoSlider');
-            slider.addEventListener('touchstart', function(e) {
-                touchStartX = e.touches[0].clientX;
-                touchEndX = touchStartX;
-            }, { passive: true });
-            slider.addEventListener('touchmove', function(e) {
-                touchEndX = e.touches[0].clientX;
-                if (Math.abs(touchStartX - touchEndX) > 10) e.preventDefault();
-            }, { passive: false });
-            slider.addEventListener('touchend', function() {
-                var diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
-            });
-        })();
-    </script>
 
     <!-- GA4 Tracking -->
     <script>
