@@ -346,8 +346,17 @@
         .delay-300 { transition-delay: 300ms; }
 
         .gallery-image {
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 0.6s ease-out, transform 0.4s ease, box-shadow 0.4s ease;
             border-radius: 14px;
+            will-change: transform;
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .gallery-image:hover {
+                transform: scale(1.03);
+                box-shadow: 0 16px 48px rgba(30, 58, 58, 0.14);
+                cursor: pointer;
+            }
         }
 
         /* Logo scroll */
@@ -364,21 +373,25 @@
            WORD SWAP ANIMATION
            =================================== */
         .word-swap-container {
-            display: inline-block;
+            display: inline;
             position: relative;
-            vertical-align: bottom;
-            height: 1em;        /* locks height to 1 line at h1 font-size; prevents layout shift */
-            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .word-swap-sizer {
+            display: inline-block;
+            visibility: hidden;
+            /* Holds the width of the widest word ("schedule") so the period
+               never shifts as shorter words swap in. Inherits h1 font/size. */
         }
 
         .word-swap-word {
-            display: block;
             position: absolute;
             left: 0;
-            color: #2F5D57;     /* site button green — signals interactivity without clashing */
-            white-space: nowrap;
+            top: 0;
+            color: #2F5D57;
             opacity: 0;
-            transform: translateY(100%);
+            transform: translateY(0.3em);
             transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
             pointer-events: none;
         }
@@ -391,13 +404,7 @@
 
         .word-swap-word.word-swap-exit {
             opacity: 0;
-            transform: translateY(-100%);
-            transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
-        }
-
-        @media (max-width: 768px) {
-            /* On mobile the phrase flows naturally; no need to isolate swapping word on its own line */
-            .word-swap-br { display: none; }
+            transform: translateY(-0.3em);
         }
 
         /* ===================================
@@ -648,7 +655,7 @@
             <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between island overflow-hidden md:min-h-[540px]">
                 <div class="flex-1 px-4 py-12 md:px-12 md:py-14 flex flex-col justify-center z-10">
                     <h1 class="display-text text-[#1E3A3A] mb-6 md:mb-8">
-                        Yoga that fits your<br class="word-swap-br"> <span class="word-swap-container" aria-live="polite" aria-atomic="true"><span class="word-swap-word word-swap-active">schedule</span><span class="word-swap-word">team</span><span class="word-swap-word">life</span></span>.
+                        Yoga that fits your <span class="word-swap-container" aria-live="polite" aria-atomic="true"><span class="word-swap-sizer" aria-hidden="true">schedule</span><span class="word-swap-word word-swap-active">schedule</span><span class="word-swap-word">team</span><span class="word-swap-word">life</span></span>.
                     </h1>
                     <p class="text-[#4A6868] mb-6 md:mb-8 max-w-md prose-limit">
                         I help busy professionals use 30–60 minutes of movement to think clearer, sleep better, and recover from long work days.
@@ -972,62 +979,32 @@
         // Word swap: schedule → team → life — runs once on load
         (function() {
             var words = document.querySelectorAll('.word-swap-word');
-            var container = document.querySelector('.word-swap-container');
-            if (!words.length || !container) return;
+            if (!words.length) return;
 
-            // Lock container min-width to widest word (measured after fonts load)
-            // so the period after the container never shifts position.
-            function lockWidth() {
-                var max = 0;
-                words.forEach(function(w) {
-                    var prev = w.style.cssText;
-                    w.style.opacity = '0';
-                    w.style.transform = 'translateY(0)';
-                    w.style.position = 'static';
-                    w.style.display = 'inline';
-                    max = Math.max(max, w.offsetWidth);
-                    w.style.cssText = prev;
-                });
-                if (max > 0) container.style.minWidth = max + 'px';
-            }
+            var current = 0;
 
-            function afterFonts(cb) {
-                if (document.fonts && document.fonts.ready) {
-                    document.fonts.ready.then(cb);
-                } else {
-                    setTimeout(cb, 400);
-                }
-            }
+            function swap() {
+                var next = current + 1;
+                if (next >= words.length) return; // stop after "life"
+                var outgoing = words[current];
+                var incoming = words[next];
 
-            afterFonts(function() {
-                lockWidth();
+                outgoing.classList.add('word-swap-exit');
+                outgoing.classList.remove('word-swap-active');
+                incoming.classList.add('word-swap-active');
 
-                var current = 0;
-
-                function swap() {
-                    var next = current + 1;
-                    if (next >= words.length) return; // stop after "life"
-                    var outgoing = words[current];
-                    var incoming = words[next];
-
-                    outgoing.classList.add('word-swap-exit');
-                    outgoing.classList.remove('word-swap-active');
-                    incoming.classList.add('word-swap-active');
-
-                    setTimeout(function() {
-                        outgoing.classList.remove('word-swap-exit');
-                    }, 370); // 350ms transition + 20ms buffer
-
-                    current = next;
-                }
-
-                // t=2000ms  → swap to "team"
-                // t=4200ms  → swap to "life" (stays permanently)
                 setTimeout(function() {
-                    swap();
-                    setTimeout(swap, 2200);
-                }, 2000);
-            });
+                    outgoing.classList.remove('word-swap-exit');
+                }, 370); // 350ms transition + 20ms buffer
+
+                current = next;
+            }
+
+            // t=2000ms → "team", t=4200ms → "life" (stays permanently)
+            setTimeout(function() {
+                swap();
+                setTimeout(swap, 2200);
+            }, 2000);
         })();
     </script>
 
