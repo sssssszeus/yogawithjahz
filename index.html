@@ -168,11 +168,11 @@
 
         h1 {
             font-family: 'DM Serif Display', serif;
-            font-size: 5.25rem;
+            font-size: 7rem;
             font-weight: 400;
-            line-height: 1.05;
+            line-height: 1.03;
             color: #1E3A3A;
-            letter-spacing: -0.025em;
+            letter-spacing: -0.03em;
         }
 
         h2, .section-title {
@@ -361,6 +361,46 @@
         }
 
         /* ===================================
+           WORD SWAP ANIMATION
+           =================================== */
+        .word-swap-container {
+            display: inline-block;
+            position: relative;
+            vertical-align: bottom;
+            height: 1em;        /* locks height to 1 line at h1 font-size; prevents layout shift */
+            overflow: hidden;
+        }
+
+        .word-swap-word {
+            display: block;
+            position: absolute;
+            left: 0;
+            color: #2F5D57;     /* site button green — signals interactivity without clashing */
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+            pointer-events: none;
+        }
+
+        .word-swap-word.word-swap-active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .word-swap-word.word-swap-exit {
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            /* On mobile the phrase flows naturally; no need to isolate swapping word on its own line */
+            .word-swap-br { display: none; }
+        }
+
+        /* ===================================
            HERO IMAGE
            =================================== */
         img.hero-image {
@@ -519,7 +559,7 @@
                 font-size: 0.8125rem;
             }
 
-            h1 { font-size: 2.75rem; line-height: 1.08; }
+            h1 { font-size: 3.5rem; line-height: 1.05; }
             h2, .section-title { font-size: 1.625rem; }
             h3 { font-size: 1.125rem; }
             body, p { font-size: 0.9375rem; }
@@ -559,9 +599,9 @@
         <!-- Hero -->
         <section class="pt-8 pb-0 md:py-24 bg-[#FAFAF8]">
             <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between island overflow-hidden md:min-h-[540px]">
-                <div class="flex-1 px-4 py-12 md:px-12 md:py-20 flex flex-col justify-center z-10">
+                <div class="flex-1 px-4 py-12 md:px-12 md:py-14 flex flex-col justify-center z-10">
                     <h1 class="display-text text-[#1E3A3A] mb-6 md:mb-8">
-                        Yoga that fits your schedule.
+                        Yoga that fits your<br class="word-swap-br"> <span class="word-swap-container" aria-live="polite" aria-atomic="true"><span class="word-swap-word word-swap-active">schedule</span><span class="word-swap-word">team</span><span class="word-swap-word">life</span></span>.
                     </h1>
                     <p class="text-[#4A6868] mb-6 md:mb-8 max-w-md prose-limit">
                         I help busy professionals use 30–60 minutes of movement to think clearer, sleep better, and recover from long work days.
@@ -908,6 +948,67 @@
             }
             window.addEventListener('scroll', check, { passive: true });
             check();
+        })();
+
+        // Word swap: schedule → team → life — runs once on load
+        (function() {
+            var words = document.querySelectorAll('.word-swap-word');
+            var container = document.querySelector('.word-swap-container');
+            if (!words.length || !container) return;
+
+            // Lock container min-width to widest word (measured after fonts load)
+            // so the period after the container never shifts position.
+            function lockWidth() {
+                var max = 0;
+                words.forEach(function(w) {
+                    var prev = w.style.cssText;
+                    w.style.opacity = '0';
+                    w.style.transform = 'translateY(0)';
+                    w.style.position = 'static';
+                    w.style.display = 'inline';
+                    max = Math.max(max, w.offsetWidth);
+                    w.style.cssText = prev;
+                });
+                if (max > 0) container.style.minWidth = max + 'px';
+            }
+
+            function afterFonts(cb) {
+                if (document.fonts && document.fonts.ready) {
+                    document.fonts.ready.then(cb);
+                } else {
+                    setTimeout(cb, 400);
+                }
+            }
+
+            afterFonts(function() {
+                lockWidth();
+
+                var current = 0;
+
+                function swap() {
+                    var next = current + 1;
+                    if (next >= words.length) return; // stop after "life"
+                    var outgoing = words[current];
+                    var incoming = words[next];
+
+                    outgoing.classList.add('word-swap-exit');
+                    outgoing.classList.remove('word-swap-active');
+                    incoming.classList.add('word-swap-active');
+
+                    setTimeout(function() {
+                        outgoing.classList.remove('word-swap-exit');
+                    }, 370); // 350ms transition + 20ms buffer
+
+                    current = next;
+                }
+
+                // t=2000ms  → swap to "team"
+                // t=4200ms  → swap to "life" (stays permanently)
+                setTimeout(function() {
+                    swap();
+                    setTimeout(swap, 2200);
+                }, 2000);
+            });
         })();
     </script>
 
