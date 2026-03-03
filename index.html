@@ -345,6 +345,20 @@
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
 
+        /* ===================================
+           STAGGERED LIST REVEAL
+           =================================== */
+        .list-reveal-item {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .list-reveal-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .gallery-image {
             transition: opacity 0.6s ease-out, transform 0.4s ease, box-shadow 0.4s ease;
             border-radius: 14px;
@@ -688,21 +702,21 @@
                     <h2 class="display-text text-[#1E3A3A] text-center fade-in">
                         A practical approach to yoga at work
                     </h2>
-                    <div class="island fade-in mt-10 mb-8">
+                    <div class="island fade-in mt-10 mb-8" id="how-this-works-island">
                         <div class="flex flex-col md:flex-row">
                             <div class="flex-1 px-8 py-10 md:px-10 md:py-12">
                                 <h3 class="text-[#1E3A3A] mb-5">What this is</h3>
                                 <ul class="space-y-3 text-quiet leading-relaxed">
-                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold list-reveal-item">
                                         Short sessions that fit into real workdays.
                                     </li>
-                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold list-reveal-item">
                                         Movement designed for people who sit all day.
                                     </li>
-                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold list-reveal-item">
                                         Works for complete beginners.
                                     </li>
-                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/40 before:font-bold list-reveal-item">
                                         Adapts to your team's energy and space.
                                     </li>
                                 </ul>
@@ -713,16 +727,16 @@
                             <div class="flex-1 px-8 py-10 md:px-10 md:py-12">
                                 <h3 class="text-[#1E3A3A]/70 mb-5">What this isn't</h3>
                                 <ul class="space-y-3 text-quiet leading-relaxed" style="color: rgba(44, 74, 74, 0.58);">
-                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold list-reveal-item">
                                         NOT philosophical practice.
                                     </li>
-                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold list-reveal-item">
                                         NOT advanced poses or flexibility.
                                     </li>
-                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold list-reveal-item">
                                         NOT a workout that leaves you exhausted.
                                     </li>
-                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold">
+                                    <li class="pl-5 relative before:content-['·'] before:absolute before:left-0 before:text-[#1E3A3A]/30 before:font-bold list-reveal-item">
                                         NOT one-size-fits-all programming.
                                     </li>
                                 </ul>
@@ -938,6 +952,30 @@
             }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
             document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
         });
+
+        // Staggered bullet reveal for "How This Works" island
+        (function() {
+            var island = document.querySelector('#how-this-works-island');
+            if (!island) return;
+            var items = island.querySelectorAll('.list-reveal-item');
+            if (!items.length) return;
+
+            var triggered = false;
+            var staggerObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting && !triggered) {
+                        triggered = true;
+                        items.forEach(function(item, i) {
+                            setTimeout(function() {
+                                item.classList.add('visible');
+                            }, i * 120); // 120ms between each item
+                        });
+                        staggerObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.15 });
+            staggerObserver.observe(island);
+        })();
 
         // Floating CTA visibility
         (function() {
