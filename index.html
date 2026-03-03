@@ -373,8 +373,9 @@
            WORD SWAP ANIMATION
            =================================== */
         .word-swap-container {
-            display: inline;
+            display: inline-block;
             position: relative;
+            vertical-align: baseline;
             white-space: nowrap;
         }
 
@@ -957,7 +958,7 @@
             check();
         })();
 
-        // Word swap: schedule → team → life — runs once on load
+        // Word swap: schedule → team → life → schedule → ... loops continuously
         (function() {
             var words = document.querySelectorAll('.word-swap-word');
             if (!words.length) return;
@@ -965,8 +966,7 @@
             var current = 0;
 
             function swap() {
-                var next = current + 1;
-                if (next >= words.length) return; // stop after "life"
+                var next = (current + 1) % words.length; // wraps back to 0 after "life"
                 var outgoing = words[current];
                 var incoming = words[next];
 
@@ -976,15 +976,15 @@
 
                 setTimeout(function() {
                     outgoing.classList.remove('word-swap-exit');
-                }, 370); // 350ms transition + 20ms buffer
+                }, 370);
 
                 current = next;
             }
 
-            // t=2000ms → "team", t=4200ms → "life" (stays permanently)
+            // First swap at 2s, then every 2.2s forever
             setTimeout(function() {
                 swap();
-                setTimeout(swap, 2200);
+                setInterval(swap, 2200);
             }, 2000);
         })();
     </script>
